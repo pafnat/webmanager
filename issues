@@ -1,0 +1,14 @@
+issue #1: Cannot Undeploy a web-app completely in Tomcat 7
+
+This is very common in Windows environment but there is a solution :
+Open context.xml from /tomcat/conf folder and modify the context to match this :
+<Context antiJARLocking="true" antiResourceLocking="true">
+
+
+deploy:
+    mvn tomcat7:deploy
+undeploy:
+    mvn tomcat7:undeploy
+redeploy:
+    mvn tomcat7:redeploy
+
