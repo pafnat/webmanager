@@ -1,7 +1,8 @@
 package net.manager.servlets;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import net.manager.dbmodels.DBManager;
+import net.manager.modelmanagers.CountryManager;
+import net.manager.models.Country;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import net.manager.dbmodels.DBManager;
-import net.manager.modelmanagers.CountryManager;
-import net.manager.models.Country;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Servlet implementation class GetCountryData

@@ -1,6 +1,6 @@
 ﻿.banner
 {
-	background-color:#a64d00;
+	/*background-color:#a64d00;*/
 	height:75px;
 	width:600px;
 	padding:0px 0px 0px 0px;
@@ -45,4 +45,9 @@
 	height:25px;
 	background-color:black;
 	color:white;
+}
+
+.webzone
+{
+    width:600px;
 }

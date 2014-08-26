@@ -36,7 +36,7 @@
 					<jsp:forward page="../getcountrydata.do" />
 				</c:when>
 				<c:otherwise>
-					<h1><c:out value="Welcome Back ${sessionScope.authorized_user.userId}. Here are the countries:" /></h1>
+					<h2><c:out value="Welcome Back ${sessionScope.authorized_user.userId}. Here are the countries:" /></h2>
 				</c:otherwise>
 			</c:choose> 
 			<table border=1> 

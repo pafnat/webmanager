@@ -39,7 +39,7 @@
 					<jsp:forward page="../getcitydata.do" />
 				</c:when>
 				<c:otherwise>
-					<h1><c:out value="Welcome Back ${sessionScope.authorized_user.userId}. Here are the cities:" /></h1>
+					<h2><c:out value="Welcome Back ${sessionScope.authorized_user.userId}. Here are the cities:" /></h2>
 				</c:otherwise>
 			</c:choose> 
 			<table border=1> 

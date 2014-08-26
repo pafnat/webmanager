@@ -1,12 +1,12 @@
 package net.manager.modelmanagers;
 
-import java.io.Serializable;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-
 import net.manager.dbhelpers.DBWorldQueries;
 import net.manager.dbmodels.DBManager;
 import net.manager.models.Country;
+
+import java.io.Serializable;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class CountryManager implements Serializable
 {

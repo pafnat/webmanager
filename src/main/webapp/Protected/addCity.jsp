@@ -39,7 +39,7 @@
 					<jsp:forward page="../getcountrycodes.do" />
 				</c:when>
 				<c:otherwise>
-					<h1><c:out value="Welcome Back ${sessionScope.authorized_user.userId}. Now adding a city." /></h1>
+					<h2><c:out value="Welcome Back ${sessionScope.authorized_user.userId}. Now adding a city." /></h2>
 				</c:otherwise>
 			</c:choose> 
 			<form action="${initParam.baseURL}/Protected/addnewcity.do" method="post">

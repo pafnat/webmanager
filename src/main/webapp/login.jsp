@@ -34,7 +34,7 @@
 				<table style="width:450px;">
 					<tr>
 						<td>
-							<span>UserName:</span>
+							<span>Login:</span>
 						</td>
 						<td>
 							<input name="uid" type="text" style="width:250px;" value="${cookie.credentials_uid.value}" />
@@ -70,7 +70,6 @@
 	</div>			
 	<c:import url="footer.jsp">
 		<c:param name="copyrightYear" value="${initParam.copyright}" />
-		<c:param name="websiteLink" value="${initParam.weblink}" />
 	</c:import>
 </body>
 </html>

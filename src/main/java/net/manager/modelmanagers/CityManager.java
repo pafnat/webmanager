@@ -1,13 +1,13 @@
 package net.manager.modelmanagers;
 
-import java.io.Serializable;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-
 import net.manager.dbhelpers.DBWorldQueries;
 import net.manager.dbmodels.DBManager;
 import net.manager.models.City;
 import net.manager.utilities.WorldManagerUtils;
+
+import java.io.Serializable;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class CityManager implements Serializable
 {
@@ -100,7 +100,8 @@ public class CityManager implements Serializable
 		
 		//add the city
 		String query = DBWorldQueries.insertCity(c);
-		try
+        System.out.println(query);
+        try
 		{
 			//execute
 			dbm.ExecuteNonQuery(query);
@@ -120,6 +121,7 @@ public class CityManager implements Serializable
 		catch (Exception ex)
 		{
 			//log it
+            System.out.println("Exception: " + ex);
 			return null;
 		}			
 		return c;

@@ -7,14 +7,16 @@
 .navbar ul
 {
 	list-style:none;
-	background-color:#a64d00;
+	background-color:#ffffff;
 	height:auto;
-	min-height:325px;
+	min-height:400px;
+
 	/*height:45px;*/
 	width:120px;
 	/*width:600px;*/
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
+
 }
 
 .navbar li
@@ -23,6 +25,10 @@
 	height:45px;
 	width:120px;
 	text-align:center;
+	/*border: 1px solid #ccc;
+	border-bottom: 0;*/
+	border-bottom: 1px solid #ccc;
+
 }
 
 .navbar a
@@ -34,12 +40,12 @@
 	margin:10px 5px 5px 5px;
 	padding:5px 5px 5px 5px;
 	text-decoration:none;
-	color:white;
+	color:black;
 }
 
 .navbar li:hover
 {
-	background-color:#ffb473;
+	background-color:#ccc;
 }
 
 .navbar a:hover
@@ -49,5 +55,5 @@
 
 .active
 {
-	background-color:#FF9840;
+	background-color:#777;
 }

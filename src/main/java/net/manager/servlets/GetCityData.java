@@ -1,7 +1,8 @@
 package net.manager.servlets;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import net.manager.dbmodels.DBManager;
+import net.manager.modelmanagers.CityManager;
+import net.manager.models.City;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import net.manager.dbmodels.DBManager;
-import net.manager.modelmanagers.CityManager;
-import net.manager.models.City;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Servlet implementation class GetCityData
@@ -38,10 +37,10 @@ public class GetCityData extends HttpServlet {
 		//get the cities
 		if (getServletContext().getAttribute("WorldDBManager") != null)
 		{
-			//interact with manager models
+            //interact with manager models
 			DBManager dbm = (DBManager)getServletContext().getAttribute("WorldDBManager");
 			CityManager cm = new CityManager();
-			
+
 			//build a list of city objects using the query
 			ArrayList<City> allCities = cm.getUSCitiesByDistrictByPopulation(dbm);
 			//add the cities to the session

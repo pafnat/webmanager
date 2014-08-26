@@ -29,20 +29,18 @@
 	<div class="container">
 		<c:import url="navbar.jsp" />
 		<div class="content">
-			<h1><c:out value="Welcome to the World Manager Web System" /></h1>
+			<h2><c:out value="Welcome" /></h2>
 			
 			<c:if test="${sessionScope.authorized_user ne null}">
 				<h2><c:out value="${sessionScope.authorized_user.userId}" /></h2>
 			</c:if>
 			<c:if test="${sessionScope.authorized_user eq null}">
-				<h2><c:out value="Returning users login" /></h2>
-						<a href="login.jsp">here</a>
+						Try to login <a href="login.jsp">here</a>
 			</c:if>
 		</div>
 	</div>			
 	<c:import url="footer.jsp">
 		<c:param name="copyrightYear" value="${initParam.copyright}" />
-		<c:param name="websiteLink" value="${initParam.weblink}" />
 	</c:import>
 </body>
 </html>

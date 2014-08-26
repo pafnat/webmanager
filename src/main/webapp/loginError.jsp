@@ -33,7 +33,6 @@
 	</div>			
 	<c:import url="footer.jsp">
 		<c:param name="copyrightYear" value="${initParam.copyright}" />
-		<c:param name="websiteLink" value="${initParam.weblink}" />
 	</c:import>
 </body>
 </html>
