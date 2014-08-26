@@ -4,7 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Welcome to the World Manager</title>
   <title>Welcome to the World Manager</title>
   <link rel="stylesheet" type="text/css" href="css/menubar.css"> 
   <link rel="stylesheet" type="text/css" href="css/sitestyle.css"> 
@@ -12,7 +13,7 @@
   <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js" ></script>
   <script type="text/javascript">
-  $(function(){
+	$(function(){
 		$('.addHover').hover(function(){
 			$(this).addClass('ui-state-hover');}, 
 			function(){
@@ -20,7 +21,7 @@
 		});
 		
 		$('.li[class|="active"]').removeClass("active");
-		$('#homeLink').addClass("active");
+		$('#loginLink').addClass("active");
 	});
   </script>
 </head>
@@ -29,15 +30,42 @@
 	<div class="container">
 		<c:import url="navbar.jsp" />
 		<div class="content">
-			<h1><c:out value="Welcome to the World Manager Web System" /></h1>
-			
-			<c:if test="${sessionScope.authorized_user ne null}">
-				<h2><c:out value="${sessionScope.authorized_user.userId}" /></h2>
-			</c:if>
-			<c:if test="${sessionScope.authorized_user eq null}">
-				<h2><c:out value="Returning users login" /></h2>
-						<a href="login.jsp">here</a>
-			</c:if>
+			<form id="login" method="post" action="${initParam.baseURL}/loginUser.do">
+				<table style="width:450px;">
+					<tr>
+						<td>
+							<span>UserName:</span>
+						</td>
+						<td>
+							<input name="uid" type="text" style="width:250px;" value="${cookie.credentials_uid.value}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>Password:</span>
+						</td>
+						<td>
+							<input name="pwd" type="password" style="width:250px;" value="${cookie.credentials_pwd.value}"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">
+							<input name="rememberMe" type="checkbox">&nbsp;Remember Me
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">
+
+							<button id="button" class="ui-button ui-widget ui-state-default ui-corner-all 
+														ui-button-text-only addHover" 
+								role="button" aria-disabled="false" style="width:250px;">
+								<span class="ui-button-text">Sign In</span>
+							</button>
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="dest" value="${param.dest}" />
+			</form>
 		</div>
 	</div>			
 	<c:import url="footer.jsp">
@@ -46,3 +74,6 @@
 	</c:import>
 </body>
 </html>
+
+				
+			

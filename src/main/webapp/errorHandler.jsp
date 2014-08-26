@@ -1,10 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" 
+	contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"
+    isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" 
+	content="text/html; charset=ISO-8859-1">
+<title>Our bad!</title>
   <title>Welcome to the World Manager</title>
   <link rel="stylesheet" type="text/css" href="css/menubar.css"> 
   <link rel="stylesheet" type="text/css" href="css/sitestyle.css"> 
@@ -29,15 +33,9 @@
 	<div class="container">
 		<c:import url="navbar.jsp" />
 		<div class="content">
-			<h1><c:out value="Welcome to the World Manager Web System" /></h1>
-			
-			<c:if test="${sessionScope.authorized_user ne null}">
-				<h2><c:out value="${sessionScope.authorized_user.userId}" /></h2>
-			</c:if>
-			<c:if test="${sessionScope.authorized_user eq null}">
-				<h2><c:out value="Returning users login" /></h2>
-						<a href="login.jsp">here</a>
-			</c:if>
+			<span class="defaultText textBold">An Error has occurred!</span><br>
+			${pageContext.exception.message}
+			${param.ex}
 		</div>
 	</div>			
 	<c:import url="footer.jsp">
